@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Light mode */
+    --background: 255 100% 100%; /* White */
+    --primary-foreground: 0 0% 10%; /* Near black */
+    --secondary-foreground: 220 9% 46%; /* Light gray  (#9ca3af) equivalent */
+    --accent-foreground: 220 98% 40%; /* Strong blue (#0137c1) */
+    --card: 0 0% 98%; /* Very light gray  */
+    --button-background: 0 0% 90%; /* Light gray */
+  }
+
+  .dark {
+    /* Dark mode */
+    --background: 240 4% 7%; /* #121212 dark background */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary-foreground: 220 9% 46%; /* Same #9ca3af for secondary  */
+    --accent-foreground: 220 98% 40%; /* Strong blue */
+    --card: 0 0% 11%; /* #1c1c1c card background */
+    --button-background: 0 0% 11%; /* same #1c1c1c  */
+  }
 }
