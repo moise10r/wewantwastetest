@@ -8,8 +8,8 @@ export function SkipGrid() {
   const { data: skips, isLoading, isError, error } = useGetSkips();
   if (isLoading) {
     return (
-      <div className="w-full flex items-center justify-center mt-7">
-        <LoaderCircle className="text-accent-foreground animate-spin text-3xl" />
+      <div className="w-full flex items-center justify-center mt-[100px]">
+        <LoaderCircle className="text-accent-foreground animate-spin h-10 w-10" />
       </div>
     );
   }

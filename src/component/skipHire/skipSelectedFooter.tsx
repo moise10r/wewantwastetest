@@ -1,16 +1,18 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { useSkipStore } from "@/store/skipStore";
+import { useProgressStepperStore } from "@/store/progressStepperStore";
 
 export default function SkipSelectedFooter() {
   const { selectedSkip } = useSkipStore();
+  const { currentStep, setCurrentStep } = useProgressStepperStore();
 
   return (
     <motion.div
-      className="fixed bottom-0 left-0 right-0 flex items-center border-border border-2 justify-between w-full px-6 py-4 bg-card  text-white z-50"
+      className="fixed bottom-0 left-0 right-0 flex items-center  border-border border-2 justify-between w-full px-6 py-4 bg-card  text-white z-50"
       initial={{ y: 100, opacity: 0 }}
       animate={{
         y: selectedSkip ? 0 : 100,
@@ -21,7 +23,7 @@ export default function SkipSelectedFooter() {
         ease: "easeOut",
       }}
     >
-      <div className="w-[72%] mx-auto flex justify-between items-center">
+      <div className="w-[72%] mx-auto flex flex-col my-4 md:flex-row justify-between items-center">
         <div className="flex items-center gap-2">
           <span className="text-sm text-secondary-foreground font-medium mr-2">
             {selectedSkip?.size}
@@ -34,10 +36,16 @@ export default function SkipSelectedFooter() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <Button className="text-primary-foreground text-md hover:bg-button-background ">
+          <Button
+            className="text-primary-foreground text-md hover:bg-button-background "
+            onClick={() => setCurrentStep(currentStep - 1)}
+          >
             Back
           </Button>
-          <Button className="bg-accent-foreground text-md hover:bg-blue-700 text-primary-foreground px-5">
+          <Button
+            className="bg-accent-foreground text-md hover:bg-blue-700 text-primary-foreground px-5"
+            onClick={() => setCurrentStep(currentStep + 1)}
+          >
             Continue <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

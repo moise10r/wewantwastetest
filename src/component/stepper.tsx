@@ -6,7 +6,7 @@ export default function ProgressStepper() {
   const { steps, currentStep, setCurrentStep } = useProgressStepperStore();
   return (
     <div className="w-full  mx-auto  py-[25px]">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+      <div className="flex  md:flex-row items-start md:items-center justify-between overflow-auto ">
         {steps.map((step, index) => (
           <div key={step.id} className="flex items-center w-full">
             <button className="flex flex-row items-center cursor-pointer">

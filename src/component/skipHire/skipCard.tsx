@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 import { AlertTriangle, ArrowRight } from "lucide-react";
 import { Skip } from "@/interfaces/skip";
 import { useSkipStore } from "@/store/skipStore";
@@ -75,7 +75,7 @@ export function SkipCard({ skip }: SkipCardProps) {
               : "bg-button-background/30 hover:bg-button-background "
           }text-primary-foreground py-2.5 text-md  md:py-[25px]  rounded flex items-center justify-center transition-colors`}
         >
-          <span className="mr-2">
+          <span className="mr-2 text-wrap">
             {isSelected ? "Selected" : "Select This Skip"}
           </span>
           <ArrowRight size={18} />
