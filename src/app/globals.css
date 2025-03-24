@@ -7,37 +7,48 @@
 /* Define design tokens using the @theme directive */
 @theme {
   /* Light mode */
+  --primary-blue: #0037c1;
+  --secondary-blue: #111111;
+  --dark-bg: #1c1c1c;
+  --border-color: #2a2a2a;
+
   --background: 255 100% 100%; /* White */
   --primary-foreground: 0 0% 10%; /* Near black */
-  --secondary-foreground: 220 9% 46%; /* Light gray  (#9ca3af) equivalent */
-  --accent-foreground: 220 98% 40%; /* Strong blue (#0137c1) */
-  --card: 0 0% 98%; /* Very light gray  */
+  --secondary-foreground: 220 9% 46%; /* Light gray (#9ca3af) */
+  --accent-foreground: var(--primary-blue);
+  --card: 0 0% 98%; /* Very light gray */
   --button-background: 0 0% 90%; /* Light gray */
   --radius: 0.5rem;
-  --border: 0 0% 89.8%;
-  --input: 0 0% 89.8%;
+  --border: var(--border-color);
+  --input: var(--border-color);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary-foreground: oklch(0.556 0 0);
-  --accent-foreground: oklch(0.48 0.16 264);
-  --card: oklch(0.98 0 0);
-  --button-background: oklch(0.9 0 0);
+  --primary-blue: #0037c1;
+  --secondary-blue: #2563eb;
+  --dark-bg: #111111;
+  --border-color: #2a2a2a;
+
+  --background: #ffffff;
+  --primary-foreground: #1a1a1a;
+  --secondary-foreground: #9ca3af;
+  --accent-foreground: var(--primary-blue);
+  --card: #f7f7f7;
+  --button-background: #e5e5e5;
   --radius: 0.5rem;
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: var(--border-color);
+  --input: var(--border-color);
 }
 
 .dark {
-  /* Dark mode */
-  --background: oklch(0.145 0 0); /* #121212 dark background */
-  --primary-foreground: oklch(1 0 0); /* White */
-  --secondary-foreground: oklch(0.556 0 0); /* Same #9ca3af for secondary  */
-  --accent-foreground: oklch(0.48 0.16 264); /* Strong blue */
-  --card: oklch(0.2 0 0); /* #1c1c1c card background */
-  --button-background: oklch(0.2 0 0); /* same #1c1c1c  */
+  --background: var(--dark-bg);
+  --primary-foreground: #ffffff;
+  --secondary-foreground: #656669;
+  --accent-foreground: var(--primary-blue);
+  --card: #232323;
+  --button-background: #232323;
+  --border: var(--border-color);
+  --input: var(--border-color);
 }
 
 @theme inline {
@@ -61,5 +72,7 @@
 
   body {
     @apply bg-background text-primary-foreground font-sans;
+    margin: 0;
+    padding: 0;
   }
 }

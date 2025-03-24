@@ -17,12 +17,12 @@ export default function ProgressStepper({
   currentStep,
 }: ProgressStepperProps) {
   return (
-    <div className="w-full  mx-auto px-4 py-8">
+    <div className="w-full  mx-auto  py-[25px]">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         {steps.map((step, index) => (
           <div key={step.id} className="flex items-center w-full">
-            <div className="flex flex-row items-center">
-              <div
+            <button className="flex flex-row items-center cursor-pointer">
+              <span
                 className={cn(
                   "flex items-center justify-center w-10 h-10 transition-colors",
                   step.id <= currentStep
@@ -31,10 +31,10 @@ export default function ProgressStepper({
                 )}
               >
                 <step.icon className="h-6 w-6" />
-              </div>
+              </span>
               <span
                 className={cn(
-                  "mr-2 text-dm font-medium",
+                  "mr-2 text-md font-medium text-nowrap",
                   step.id <= currentStep
                     ? "text-primary-foreground"
                     : "text-secondary-foreground"
@@ -42,13 +42,13 @@ export default function ProgressStepper({
               >
                 {step.name}
               </span>
-            </div>
+            </button>
 
             {index < steps.length - 1 && (
               <div
                 className={cn(
-                  "hidden md:block h-[0.1px] flex-grow mx-2 w-[40px]",
-                  step.id < currentStep
+                  "hidden md:block h-[0.1px] flex-grow mx-2 min-w-[65px] max-w-[65px]",
+                  step.id < currentStep - 1
                     ? "bg-accent-foreground"
                     : "bg-secondary-foreground"
                 )}
