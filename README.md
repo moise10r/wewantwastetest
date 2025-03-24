@@ -8,13 +8,13 @@ cd ./wewantwastetest
 
 ## ⚙️ Tech Stack
 
-Next.js
-TypeScript: For type safely
-zustand: To manage the global states
-Radix: As the component library
-TailwindCSS: For quick styling
-react-query: For quering and cachinf the data
-lucide-react: for icons
+- Next.js
+- TypeScript: For type safely
+- zustand: To manage the global states
+- Radix: As the component library
+- TailwindCSS: For quick styling
+- react-query: For quering and cachinf the data
+- lucide-react: for icons
 
 ## Getting Started
 
