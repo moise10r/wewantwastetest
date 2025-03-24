@@ -1,7 +1,8 @@
 export interface Skip {
   id: number;
   size: string;
-  title: string;
-  price: string;
-  privateOnly: boolean;
+  hire_period_days: string;
+  price_before_vat: string;
+  allowed_on_road: boolean;
+  allows_heavy_waste: boolean;
 }

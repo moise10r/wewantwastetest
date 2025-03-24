@@ -1,22 +1,9 @@
+"use client";
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
-import { Button } from "./ui/button";
+import { useProgressStepperStore } from "@/store/progressStepperStore";
 
-type Step = {
-  id: number;
-  name: string;
-  icon: LucideIcon;
-};
-
-type ProgressStepperProps = {
-  steps: Step[];
-  currentStep: number;
-};
-
-export default function ProgressStepper({
-  steps,
-  currentStep,
-}: ProgressStepperProps) {
+export default function ProgressStepper() {
+  const { steps, currentStep, setCurrentStep } = useProgressStepperStore();
   return (
     <div className="w-full  mx-auto  py-[25px]">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">

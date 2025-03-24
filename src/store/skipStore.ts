@@ -1,12 +1,18 @@
-import { create } from "zustand";
-import { Skip } from "@/interfaces/skip";
+import { create, StateCreator } from "zustand";
+import { Skip } from "@/interfaces/skip"; // Assuming "@/interfaces/skip" is correct
 
 interface SkipState {
   selectedSkip: Skip | null;
-  selectSkip: (skip: Skip) => void;
+  skips: Skip[];
+  selectSkip: (skip: Skip | null) => void;
+  setSkips: (skips: Skip[]) => void;
 }
 
-export const useSkipStore = create<SkipState>((set) => ({
+const skipStore: StateCreator<SkipState> = (set) => ({
   selectedSkip: null,
+  skips: [],
   selectSkip: (skip) => set({ selectedSkip: skip }),
-}));
+  setSkips: (skips) => set({ skips: skips }),
+});
+
+export const useSkipStore = create<SkipState>()(skipStore);
