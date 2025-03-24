@@ -1,10 +1,11 @@
 import ProgressStepper from "@/component/stepper";
 
 import { SkipGrid } from "@/component/skipGrid";
+import SkipSelectedFooter from "@/component/skipSelectedFooter";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       <div className="w-[70%] mx-auto">
         <ProgressStepper />
       </div>
@@ -17,6 +18,7 @@ export default function Home() {
         </p>
       </div>
       <SkipGrid />
+      <SkipSelectedFooter />
     </div>
   );
 }

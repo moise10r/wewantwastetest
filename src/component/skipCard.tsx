@@ -58,8 +58,10 @@ export function SkipCard({ skip }: SkipCardProps) {
         </div>
       </div>
       <div className="relative pt-3">
-        <h2 className="text-xl font-bold mb-1">{skip.hire_period_days}</h2>
-        <p className="text-secondary-foreground mb-6">14 day hire period</p>
+        <h2 className="text-xl font-bold mb-1">{skip.size} Yard Skip</h2>
+        <p className="text-secondary-foreground mb-6">
+          {skip.hire_period_days} day hire period
+        </p>
         <div className="flex items-baseline mb-5">
           <span className="text-accent-foreground text-2xl font-bold">
             {skip.price_before_vat}
@@ -69,7 +71,7 @@ export function SkipCard({ skip }: SkipCardProps) {
         <Button
           className={`w-full ${
             isSelected
-              ? "bg-accent-foreground hover:bg-accent-foreground/50"
+              ? "bg-accent-foreground hover:bg-blue-700"
               : "bg-button-background/30 hover:bg-button-background "
           }text-primary-foreground py-2.5 text-md  md:py-[25px]  rounded flex items-center justify-center transition-colors`}
         >
