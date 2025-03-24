@@ -43,10 +43,10 @@
 .dark {
   --background: var(--dark-bg);
   --primary-foreground: #ffffff;
-  --secondary-foreground: #656669;
+  --secondary-foreground: #949393;
   --accent-foreground: var(--primary-blue);
-  --card: #232323;
-  --button-background: #232323;
+  --card: #1c1c1c;
+  --button-background: #3d3c3c;
   --border: var(--border-color);
   --input: var(--border-color);
 }
