@@ -31,14 +31,17 @@ export function SkipCard({ skip }: SkipCardProps) {
       }}
     >
       <div className="relative">
+        {isSelected && (
+          <span className="absolute w-[10px] h-[2px] top-0 z-0 -right-[8px] rotate-[-40deg] bg-accent-foreground rounded-full"></span>
+        )}
         <Image
           src="/skipImage.jpeg"
           width={200}
           height={200}
           alt={`${skip.size} Yard Skip`}
-          className="w-full h-48 object-cover"
+          className=" w-full h-48 object-cover rounded-sm z-10"
         />
-        <Badge className="absolute top-2 right-2 bg-accent-foreground text-primary-foreground px-2 text-[14px]  rounded-full font-semibold">
+        <Badge className="absolute  top-2 right-2 bg-accent-foreground text-primary-foreground px-2 text-[14px]  rounded-full font-semibold">
           {skip.size} Yards
         </Badge>
         <div className="absolute bottom-4 left-4 flex flex-col">
@@ -64,21 +67,27 @@ export function SkipCard({ skip }: SkipCardProps) {
         </p>
         <div className="flex items-baseline mb-5">
           <span className="text-accent-foreground text-2xl font-bold">
-            {skip.price_before_vat}
+            £{skip.price_before_vat}
           </span>
           <span className="text-secondary-foreground ml-2">per week</span>
         </div>
         <Button
           className={`w-full ${
             isSelected
-              ? "bg-accent-foreground hover:bg-blue-700"
-              : "bg-button-background/30 hover:bg-button-background "
-          }text-primary-foreground py-2.5 text-md  md:py-[25px]  rounded flex items-center justify-center transition-colors`}
+              ? "bg-blue-800 hover:bg-accent-foreground "
+              : "bg-button-background/30 hover:bg-button-background"
+          } text-primary-foreground py-2.5 text-md md:py-[25px] rounded flex items-center justify-center transition-colors`}
         >
           <span className="mr-2 text-wrap">
-            {isSelected ? "Selected" : "Select This Skip"}
+            {isSelected ? (
+              <span>Selected</span>
+            ) : (
+              <span className="flex items-center justify-center">
+                <span className="mr-2">Select This Skip</span>{" "}
+                <ArrowRight size={18} />
+              </span>
+            )}
           </span>
-          <ArrowRight size={18} />
         </Button>
       </div>
     </div>
